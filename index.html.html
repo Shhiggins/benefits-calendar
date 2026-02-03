@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PayPal Global Benefits Calendar 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--pp-blue:#0070BA;--pp-dark:#001C64;--pp-navy:#003087;--pp-light-blue:#009CDE;--pp-white:#FFFFFF;--pp-gray-50:#F8FAFC;--pp-gray-100:#F1F5F9;--pp-gray-200:#E2E8F0;--pp-gray-300:#CBD5E1;--pp-gray-400:#94A3B8;--pp-gray-500:#64748B;--pp-gray-600:#475569;--pp-gray-800:#1E293B;--pp-gray-900:#0F172A;--pp-card-bg:#FFFFFF;--pp-text:#0F172A;--pp-text-muted:#64748B;--pp-border:#E2E8F0;--pp-shadow:0 1px 3px rgba(0,0,0,0.1);--pp-shadow-lg:0 10px 15px -3px rgba(0,0,0,0.1);--pp-shadow-xl:0 20px 25px -5px rgba(0,0,0,0.1);--pp-gradient:linear-gradient(135deg,#0070BA 0%,#003087 100%);--pp-radius:12px;--pp-radius-lg:16px}
+[data-theme="dark"]{--pp-gray-50:#0F172A;--pp-gray-100:#1E293B;--pp-gray-200:#334155;--pp-gray-300:#475569;--pp-gray-400:#64748B;--pp-gray-500:#94A3B8;--pp-gray-800:#F1F5F9;--pp-gray-900:#F8FAFC;--pp-card-bg:#1E293B;--pp-text:#F1F5F9;--pp-text-muted:#94A3B8;--pp-border:#334155;--pp-white:#0F172A}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--pp-gray-100);min-height:100vh;color:var(--pp-text);line-height:1.5}
+.container{max-width:1600px;margin:0 auto;background:var(--pp-white);min-height:100vh;box-shadow:var(--pp-shadow-xl)}
+.header{background:var(--pp-gradient);color:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;position:sticky;top:0;z-index:100}
+.header-left{display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:8px}
+.logo svg{height:28px}
+.header-title{border-left:2px solid rgba(255,255,255,0.3);padding-left:20px}
+.header-title h1{font-size:1.1rem;font-weight:700}
+.header-title p{font-size:0.75rem;opacity:0.85}
+.current-date-badge{background:rgba(255,255,255,0.2);padding:6px 14px;border-radius:20px;font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:6px}
+.header-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.8rem;border:none;display:inline-flex;align-items:center;gap:6px;transition:all 0.2s;font-family:inherit}
+.btn-glass{background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.2)}
+.btn-glass:hover{background:rgba(255,255,255,0.25);transform:translateY(-1px)}
+.btn-white{background:#fff;color:var(--pp-navy)}
+.btn-white:hover{background:var(--pp-gray-100)}
+.btn-admin{background:#F59E0B;color:#fff;border:none}
+.btn-admin:hover{background:#D97706}
+.btn-admin.active{background:#DC2626}
+.btn-danger{background:#DC2626;color:#fff}
+.btn-danger:hover{background:#B91C1C}
+.btn-success{background:#22C55E;color:#fff}
+.btn-success:hover{background:#16A34A}
+.view-toggle{display:flex;background:rgba(255,255,255,0.1);border-radius:8px;padding:3px}
+.view-btn{padding:6px 14px;background:transparent;color:rgba(255,255,255,0.8);border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:0.75rem;transition:all 0.2s;border-radius:6px}
+.view-btn.active{background:#fff;color:var(--pp-navy)}
+.search-box{display:flex;align-items:center;background:#fff;border-radius:8px;padding:0 12px;gap:8px;min-width:200px}
+.search-box input{border:none;padding:10px 0;font-size:0.85rem;width:100%;font-family:inherit;outline:none;color:var(--pp-gray-800)}
+.filters{background:var(--pp-card-bg);padding:16px 24px;border-bottom:1px solid var(--pp-border);position:sticky;top:68px;z-index:90}
+.filters-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.filter-group{display:flex;flex-direction:column;gap:4px}
+.filter-group label{font-weight:600;color:var(--pp-text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em}
+.filter-group select,.filter-group input{padding:10px 12px;border:2px solid var(--pp-border);border-radius:8px;font-size:0.85rem;background:var(--pp-card-bg);cursor:pointer;font-family:inherit;font-weight:500;color:var(--pp-text);transition:all 0.2s}
+.filter-group select{padding-right:32px;background:var(--pp-card-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748B' d='M6 8L2 4h8z'/%3E%3C/svg%3E") no-repeat right 12px center;appearance:none}
+.filter-group select:focus,.filter-group input:focus{border-color:var(--pp-blue);outline:none}
+.active-filters{background:var(--pp-gray-50);padding:12px 24px;border-bottom:1px solid var(--pp-border);display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:52px}
+.active-filters-label{font-weight:700;color:var(--pp-text);font-size:0.8rem;margin-right:8px}
+.filter-tag{background:var(--pp-blue);color:#fff;padding:6px 12px;border-radius:20px;font-weight:600;font-size:0.75rem;display:inline-flex;align-items:center;gap:6px}
+.filter-tag-remove{background:rgba(255,255,255,0.2);border:none;color:#fff;width:18px;height:18px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.7rem}
+.filter-tag-remove:hover{background:rgba(255,255,255,0.4)}
+.clear-all-btn{background:transparent;border:2px dashed var(--pp-gray-300);color:var(--pp-text-muted);padding:6px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;cursor:pointer}
+.clear-all-btn:hover{border-color:var(--pp-blue);color:var(--pp-blue)}
+.quick-stats{background:var(--pp-navy);padding:12px 24px;display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.quick-stat{display:flex;align-items:center;gap:8px;color:#fff}
+.quick-stat-icon{width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.quick-stat-content{display:flex;flex-direction:column}
+.quick-stat-value{font-size:1.25rem;font-weight:800;line-height:1}
+.quick-stat-label{font-size:0.65rem;opacity:0.8;text-transform:uppercase;letter-spacing:0.05em}
+.calendar-view,.dashboard-view,.timeline-view{display:none}
+.calendar-view.active,.dashboard-view.active,.timeline-view.active{display:block}
+.calendar{padding:24px}
+.month-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:20px}
+.month-card{background:var(--pp-card-bg);border-radius:var(--pp-radius-lg);border:1px solid var(--pp-border);overflow:hidden;box-shadow:var(--pp-shadow);transition:all 0.3s}
+.month-card:hover{box-shadow:var(--pp-shadow-lg);transform:translateY(-2px)}
+.month-card.current-month{border:3px solid var(--pp-blue);box-shadow:0 0 20px rgba(0,112,186,0.3)}
+.month-header{background:var(--pp-gradient);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.month-name{font-size:1.2rem;font-weight:800}
+.month-badge{background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:700}
+.current-month-badge{background:#22C55E;padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:700;margin-left:8px}
+.month-moment{background:linear-gradient(135deg,#EFF6FF 0%,#DBEAFE 100%);padding:12px 20px;border-bottom:1px solid #BFDBFE;font-size:0.8rem;color:var(--pp-navy);font-weight:600}
+.events-list{padding:12px;max-height:500px;overflow-y:auto}
+.source-group{margin-bottom:12px}
+.source-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid var(--pp-border)}
+.source-dot{width:10px;height:10px;border-radius:3px}
+.source-name{font-weight:700;font-size:0.75rem;color:var(--pp-text)}
+.source-count{background:var(--pp-gray-100);color:var(--pp-text-muted);padding:2px 8px;border-radius:10px;font-size:0.65rem;font-weight:700;margin-left:auto}
+.sq-vhibespoke{background:#F43F5E}.sq-vhicommunity{background:#F97316}.sq-rsm{background:#8B5CF6}.sq-optum{background:#06B6D4}.sq-erg{background:var(--pp-navy)}.sq-sites{background:#22C55E}.sq-nudge{background:#EC4899}.sq-benefits{background:#14B8A6}
+.event{background:var(--pp-gray-50);border-radius:10px;margin-bottom:8px;border-left:4px solid var(--pp-gray-300);transition:all 0.2s;cursor:pointer;overflow:hidden;position:relative}
+.event:hover{box-shadow:var(--pp-shadow);transform:translateX(4px);border-left-color:var(--pp-blue)}
+.event.key{border-left-color:#F59E0B;background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 100%)}
+.event.virtual{border-left-color:var(--pp-navy)}.event.onsite{border-left-color:#22C55E}.event.hybrid{border-left-color:var(--pp-light-blue)}
+.event.past-event{opacity:0.6}
+.event.past-event::after{content:'✓ Past';position:absolute;top:8px;right:8px;background:var(--pp-gray-400);color:#fff;padding:2px 8px;border-radius:10px;font-size:0.6rem;font-weight:700}
+.event-header{padding:12px 14px;display:flex;align-items:flex-start;gap:10px}
+.event-icon{font-size:1.1rem}
+.event-content{flex:1;min-width:0}
+.event-title{font-weight:700;color:var(--pp-text);font-size:0.85rem;line-height:1.3;margin-bottom:6px}
+.event-meta{display:flex;flex-wrap:wrap;gap:4px}
+.event-actions{display:none;gap:4px;margin-left:auto}
+.admin-mode .event-actions{display:flex}
+.event-actions button{padding:4px 8px;border-radius:4px;border:none;cursor:pointer;font-size:0.65rem;font-weight:600}
+.tag{padding:3px 8px;border-radius:4px;font-size:0.65rem;font-weight:700}
+.tag-emotional{background:#EDE9FE;color:#6D28D9}.tag-financial{background:#DCFCE7;color:#15803D}.tag-physical{background:#DBEAFE;color:#1E40AF}
+.tag-date{background:var(--pp-navy);color:#fff}.tag-key{background:#FEF3C7;color:#B45309}
+.tag-virtual{background:#E0E7FF;color:var(--pp-navy)}.tag-onsite{background:#DCFCE7;color:#15803D}.tag-hybrid{background:#CFFAFE;color:#0891B2}
+.tag-country{background:var(--pp-gray-100);color:var(--pp-text)}.tag-erg{background:#E0E7FF;color:#4338CA}
+.no-events{text-align:center;padding:40px 20px;color:var(--pp-text-muted)}
+.no-events-icon{font-size:3rem;margin-bottom:12px;opacity:0.5}
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:2000;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--pp-card-bg);border-radius:var(--pp-radius-lg);max-width:600px;width:100%;max-height:90vh;overflow:hidden;box-shadow:var(--pp-shadow-xl)}
+.modal-header{background:var(--pp-gradient);color:#fff;padding:20px 24px;display:flex;justify-content:space-between;align-items:flex-start}
+.modal-header-content{flex:1}
+.modal-title{font-size:1.25rem;font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+.modal-subtitle{font-size:0.85rem;opacity:0.9}
+.modal-close{background:rgba(255,255,255,0.2);border:none;color:#fff;width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:all 0.2s}
+.modal-close:hover{background:rgba(255,255,255,0.3);transform:rotate(90deg)}
+.modal-body{padding:24px;max-height:60vh;overflow-y:auto}
+.modal-section{margin-bottom:20px}
+.modal-section-title{font-size:0.7rem;font-weight:700;color:var(--pp-text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}
+.modal-description{font-size:0.95rem;color:var(--pp-text);line-height:1.6;padding:16px;background:var(--pp-gray-50);border-radius:8px;border-left:4px solid var(--pp-blue)}
+.modal-details{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.modal-detail{display:flex;align-items:flex-start;gap:10px;padding:12px;background:var(--pp-gray-50);border-radius:8px}
+.modal-detail-icon{font-size:1.2rem}
+.modal-detail-content{flex:1}
+.modal-detail-label{font-size:0.7rem;color:var(--pp-text-muted);font-weight:600;text-transform:uppercase;margin-bottom:2px}
+.modal-detail-value{font-size:0.9rem;color:var(--pp-text);font-weight:600}
+.modal-detail-value a{color:var(--pp-blue);text-decoration:none}
+.modal-tags{display:flex;flex-wrap:wrap;gap:6px}
+.modal-footer{padding:16px 24px;background:var(--pp-gray-50);border-top:1px solid var(--pp-border);display:flex;gap:10px;flex-wrap:wrap}
+.modal-footer .btn{flex:1;justify-content:center;padding:12px 16px;min-width:120px}
+.btn-primary{background:var(--pp-blue);color:#fff}
+.btn-primary:hover{background:var(--pp-navy)}
+.btn-secondary{background:var(--pp-gray-200);color:var(--pp-text)}
+.btn-secondary:hover{background:var(--pp-gray-300)}
+.btn-outlook{background:#0078D4;color:#fff}
+.btn-outlook:hover{background:#005A9E}
+.btn-google{background:#4285F4;color:#fff}
+.btn-google:hover{background:#3367D6}
+.admin-panel{background:linear-gradient(135deg,#FEF3C7 0%,#FDE68A 100%);border:2px solid #F59E0B;padding:20px;margin:20px;border-radius:var(--pp-radius-lg);display:none}
+.admin-panel.active{display:block}
+.admin-panel h3{color:#B45309;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.admin-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.admin-form .filter-group{margin-bottom:0}
+.admin-form textarea{min-height:80px;resize:vertical}
+.admin-buttons{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.admin-data-buttons{display:flex;gap:10px;margin-top:20px;padding-top:20px;border-top:2px dashed #F59E0B}
+.timeline{padding:24px}
+.timeline-container{position:relative;padding-left:40px}
+.timeline-line{position:absolute;left:15px;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--pp-blue),var(--pp-navy));border-radius:4px}
+.timeline-month{margin-bottom:32px}
+.timeline-month-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;position:relative}
+.timeline-month-dot{width:24px;height:24px;background:var(--pp-navy);border-radius:50%;position:absolute;left:-34px;border:4px solid var(--pp-white);box-shadow:0 0 0 2px var(--pp-blue)}
+.timeline-month-name{font-size:1.1rem;font-weight:800;color:var(--pp-text)}
+.timeline-month-count{background:var(--pp-blue);color:#fff;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:700}
+.timeline-events{display:flex;flex-direction:column;gap:10px}
+.timeline-event{background:var(--pp-card-bg);border:1px solid var(--pp-border);border-radius:var(--pp-radius);padding:16px;display:flex;align-items:center;gap:16px;transition:all 0.2s;cursor:pointer}
+.timeline-event:hover{transform:translateX(8px);box-shadow:var(--pp-shadow-lg);border-color:var(--pp-blue)}
+.timeline-event.key{border-left:4px solid #F59E0B;background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 100%)}
+.timeline-event-date{background:var(--pp-navy);color:#fff;padding:10px;border-radius:8px;text-align:center;min-width:56px}
+.timeline-event-day{font-size:1.3rem;font-weight:800;line-height:1}
+.timeline-event-month{font-size:0.6rem;font-weight:600;text-transform:uppercase;opacity:0.9}
+.timeline-event-content{flex:1}
+.timeline-event-title{font-weight:700;font-size:0.9rem;color:var(--pp-text);margin-bottom:6px}
+.timeline-event-meta{display:flex;gap:6px;flex-wrap:wrap}
+.dashboard{padding:24px}
+.dashboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.dash-card{background:var(--pp-card-bg);border-radius:var(--pp-radius-lg);padding:20px;border:1px solid var(--pp-border);box-shadow:var(--pp-shadow)}
+.dash-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.dash-card-title{font-weight:800;font-size:0.95rem;color:var(--pp-text)}
+.chart-container{height:200px;display:flex;align-items:flex-end;gap:8px;padding:12px 0}
+.chart-bar{flex:1;background:var(--pp-gradient);border-radius:6px 6px 0 0;position:relative;min-height:8px;transition:height 0.6s}
+.chart-bar-label{position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);font-size:0.6rem;font-weight:700;color:var(--pp-text-muted)}
+.chart-bar-value{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:0.7rem;font-weight:800;color:var(--pp-text)}
+.donut-container{display:flex;align-items:center;justify-content:center;gap:20px;padding:10px 0}
+.donut{width:140px;height:140px;border-radius:50%;position:relative}
+.donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;background:var(--pp-card-bg);width:80px;height:80px;border-radius:50%;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--pp-shadow)}
+.donut-center-value{font-size:1.6rem;font-weight:800;color:var(--pp-text)}
+.donut-center-label{font-size:0.6rem;color:var(--pp-text-muted);font-weight:600}
+.donut-legend{display:flex;flex-direction:column;gap:8px}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600}
+.legend-dot{width:12px;height:12px;border-radius:3px}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.summary-item{text-align:center;padding:16px;background:var(--pp-gray-50);border-radius:var(--pp-radius)}
+.summary-value{font-size:2rem;font-weight:800;color:var(--pp-navy)}
+.summary-label{font-size:0.65rem;color:var(--pp-text-muted);font-weight:600;text-transform:uppercase}
+.upcoming-list{max-height:280px;overflow-y:auto}
+.upcoming-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;cursor:pointer}
+.upcoming-item:hover{background:var(--pp-gray-50)}
+.upcoming-date{background:var(--pp-navy);color:#fff;padding:8px;border-radius:8px;text-align:center;min-width:48px}
+.upcoming-date-day{font-size:1.2rem;font-weight:800;line-height:1}
+.upcoming-date-month{font-size:0.5rem;font-weight:600;text-transform:uppercase}
+.upcoming-info{flex:1}
+.upcoming-title{font-weight:700;font-size:0.85rem;color:var(--pp-text)}
+.upcoming-meta{font-size:0.7rem;color:var(--pp-text-muted)}
+.footer{background:var(--pp-navy);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-left{color:#fff;font-size:0.75rem;opacity:0.9}
+.footer-stats{display:flex;gap:12px}
+.footer-stat{text-align:center;background:rgba(255,255,255,0.1);padding:8px 16px;border-radius:8px}
+.footer-stat-value{font-size:1.1rem;font-weight:800;color:#fff}
+.footer-stat-label{font-size:0.6rem;color:rgba(255,255,255,0.7);font-weight:600;text-transform:uppercase}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--pp-gray-800);color:#fff;padding:14px 24px;border-radius:var(--pp-radius);font-weight:600;font-size:0.9rem;box-shadow:var(--pp-shadow-xl);z-index:3000;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);display:flex;align-items:center;gap:10px}
+.toast.active{transform:translateX(-50%) translateY(0)}
+@media(max-width:768px){.header{padding:12px 16px}.header-left{flex-direction:column;align-items:flex-start;gap:8px}.header-title{border-left:none;padding-left:0}.filters{position:relative;top:auto}.filters-row{grid-template-columns:1fr 1fr}.calendar,.timeline,.dashboard{padding:16px}.month-grid{grid-template-columns:1fr}.modal-details{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<div class="header-left">
+<div class="logo">
+<svg viewBox="0 0 124 33" xmlns="http://www.w3.org/2000/svg" height="32">
+<path fill="#ffffff" d="M46.211 6.749h-6.839a.95.95 0 0 0-.939.802l-2.766 17.537a.57.57 0 0 0 .564.658h3.265a.95.95 0 0 0 .939-.803l.746-4.73a.95.95 0 0 1 .938-.803h2.165c4.505 0 7.105-2.18 7.784-6.5.306-1.89.013-3.375-.872-4.415-.972-1.142-2.696-1.746-4.985-1.746zM47 13.154c-.374 2.454-2.249 2.454-4.062 2.454h-1.032l.724-4.583a.57.57 0 0 1 .563-.481h.473c1.235 0 2.4 0 3.002.704.359.42.469 1.044.332 1.906zM66.654 13.075h-3.275a.57.57 0 0 0-.563.481l-.145.916-.229-.332c-.709-1.029-2.29-1.373-3.868-1.373-3.619 0-6.71 2.741-7.312 6.586-.313 1.918.132 3.752 1.22 5.031.998 1.176 2.426 1.666 4.125 1.666 2.916 0 4.533-1.875 4.533-1.875l-.146.91a.57.57 0 0 0 .562.66h2.95a.95.95 0 0 0 .939-.803l1.77-11.209a.568.568 0 0 0-.561-.658zm-4.565 6.374c-.316 1.871-1.801 3.127-3.695 3.127-.951 0-1.711-.305-2.199-.883-.484-.574-.668-1.391-.514-2.301.295-1.855 1.805-3.152 3.67-3.152.93 0 1.686.309 2.184.892.499.589.697 1.411.554 2.317zM84.096 13.075h-3.291a.954.954 0 0 0-.787.417l-4.539 6.686-1.924-6.425a.953.953 0 0 0-.912-.678h-3.234a.57.57 0 0 0-.541.754l3.625 10.638-3.408 4.811a.57.57 0 0 0 .465.9h3.287a.949.949 0 0 0 .781-.408l10.946-15.8a.57.57 0 0 0-.468-.895z"/>
+<path fill="#ffffff" d="M94.992 6.749h-6.84a.95.95 0 0 0-.938.802l-2.766 17.537a.569.569 0 0 0 .562.658h3.51a.665.665 0 0 0 .656-.562l.785-4.971a.95.95 0 0 1 .938-.803h2.164c4.506 0 7.105-2.18 7.785-6.5.307-1.89.012-3.375-.873-4.415-.971-1.142-2.694-1.746-4.983-1.746zm.789 6.405c-.373 2.454-2.248 2.454-4.062 2.454h-1.031l.725-4.583a.568.568 0 0 1 .562-.481h.473c1.234 0 2.4 0 3.002.704.359.42.468 1.044.331 1.906zM115.434 13.075h-3.273a.567.567 0 0 0-.562.481l-.145.916-.23-.332c-.709-1.029-2.289-1.373-3.867-1.373-3.619 0-6.709 2.741-7.311 6.586-.312 1.918.131 3.752 1.219 5.031 1 1.176 2.426 1.666 4.125 1.666 2.916 0 4.533-1.875 4.533-1.875l-.146.91a.57.57 0 0 0 .564.66h2.949a.95.95 0 0 0 .938-.803l1.771-11.209a.571.571 0 0 0-.565-.658zm-4.565 6.374c-.314 1.871-1.801 3.127-3.695 3.127-.949 0-1.711-.305-2.199-.883-.484-.574-.666-1.391-.514-2.301.297-1.855 1.805-3.152 3.67-3.152.93 0 1.686.309 2.184.892.501.589.699 1.411.554 2.317zM119.295 7.23l-2.807 17.858a.569.569 0 0 0 .562.658h2.822a.949.949 0 0 0 .939-.803l2.768-17.536a.57.57 0 0 0-.562-.659h-3.16a.571.571 0 0 0-.562.482z"/>
+<path fill="#ffffff" d="M7.266 29.154l.523-3.322-1.165-.027H1.061L4.927 1.292a.316.316 0 0 1 .314-.268h9.38c3.114 0 5.263.648 6.385 1.927.526.6.861 1.227 1.023 1.917.17.724.173 1.589.007 2.644l-.012.077v.676l.526.298a3.69 3.69 0 0 1 1.065.812c.45.513.741 1.165.864 1.938.127.795.085 1.741-.123 2.812-.24 1.232-.628 2.305-1.152 3.183a6.547 6.547 0 0 1-1.825 2c-.696.494-1.523.869-2.458 1.109-.906.236-1.939.355-3.072.355h-.73c-.522 0-1.029.188-1.427.525a2.21 2.21 0 0 0-.744 1.328l-.055.299-.924 5.855-.042.215c-.011.068-.03.102-.058.125a.155.155 0 0 1-.096.035H7.266z"/>
+<path fill="#009cde" d="M23.048 7.667c-.028.179-.06.362-.096.55-1.237 6.351-5.469 8.545-10.874 8.545H9.326c-.661 0-1.218.48-1.321 1.132L6.596 26.83l-.399 2.533a.704.704 0 0 0 .695.814h4.881c.578 0 1.069-.42 1.16-.99l.048-.248.919-5.832.059-.32c.09-.572.582-.992 1.16-.992h.73c4.729 0 8.431-1.92 9.513-7.476.452-2.321.218-4.259-.978-5.622a4.667 4.667 0 0 0-1.336-1.03z"/>
+<path fill="#012169" d="M21.754 7.151a9.757 9.757 0 0 0-1.203-.267 15.284 15.284 0 0 0-2.426-.177h-7.352a1.172 1.172 0 0 0-1.159.992L8.05 17.605l-.045.289a1.336 1.336 0 0 1 1.321-1.132h2.752c5.405 0 9.637-2.195 10.874-8.545.037-.188.068-.371.096-.55a6.594 6.594 0 0 0-1.017-.429 9.045 9.045 0 0 0-.277-.087z"/>
+<path fill="#003087" d="M9.614 7.699a1.169 1.169 0 0 1 1.159-.991h7.352c.871 0 1.684.057 2.426.177a9.757 9.757 0 0 1 1.481.353c.365.121.704.264 1.017.429.368-2.347-.003-3.945-1.272-5.392C20.378.682 17.853 0 14.622 0h-9.38c-.66 0-1.223.48-1.325 1.133L.01 25.898a.806.806 0 0 0 .795.932h5.791l1.454-9.225 1.564-9.906z"/>
+</svg>
+</div>
+<div class="header-title"><h1>Global Benefits Calendar 2026</h1><p>Wellbeing Events & Activities - EMEA</p></div>
+<div class="current-date-badge" id="currentDateBadge">📅 Loading...</div>
+</div>
+<div class="header-right">
+<div class="search-box"><span>🔍</span><input type="text" id="searchInput" placeholder="Search events..."></div>
+<div class="view-toggle">
+<button class="view-btn active" data-view="calendar">📅 Calendar</button>
+<button class="view-btn" data-view="timeline">📋 Timeline</button>
+<button class="view-btn" data-view="dashboard">📊 Dashboard</button>
+</div>
+<button class="btn btn-white" onclick="showExportModal()">📤 Export</button>
+<button class="btn btn-glass" onclick="resetFilters()">↺ Reset</button>
+<button class="btn btn-glass" onclick="toggleTheme()" id="themeBtn">🌙</button>
+<button class="btn btn-admin" id="adminBtn" onclick="toggleAdminMode()">🔧 Admin</button>
+</div>
+</header>
+
+<div class="admin-panel" id="adminPanel">
+<h3>🔧 Admin Mode - Add/Edit/Delete Events</h3>
+<div class="admin-form">
+<div class="filter-group"><label>Event Name *</label><input type="text" id="adminName" placeholder="Event name"></div>
+<div class="filter-group"><label>Month *</label><select id="adminMonth"><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div>
+<div class="filter-group"><label>Day *</label><input type="number" id="adminDay" min="1" max="31" placeholder="1-31"></div>
+<div class="filter-group"><label>Date Display</label><input type="text" id="adminDate" placeholder="e.g. 17-19th"></div>
+<div class="filter-group"><label>Pillar *</label><select id="adminPillar"><option value="emotional">💜 Emotional</option><option value="financial">💚 Financial</option><option value="physical">💙 Physical</option></select></div>
+<div class="filter-group"><label>Source *</label><select id="adminSource"><option value="vhibespoke">Vhi Bespoke</option><option value="vhicommunity">Vhi Community</option><option value="rsm">RSM</option><option value="optum">Optum</option><option value="erg">ERG</option><option value="sites">Sites</option><option value="nudge">Nudge</option><option value="benefits">Benefits Team</option></select></div>
+<div class="filter-group"><label>Format</label><select id="adminFormat"><option value="virtual">💻 Virtual</option><option value="onsite">🏢 Onsite</option><option value="hybrid">🔄 Hybrid</option></select></div>
+<div class="filter-group"><label>Icon</label><input type="text" id="adminIcon" placeholder="e.g. 💪"></div>
+<div class="filter-group"><label>Time</label><input type="text" id="adminTime" placeholder="e.g. 12:00-13:00 GMT"></div>
+<div class="filter-group"><label>Location/Room</label><input type="text" id="adminRoom" placeholder="e.g. Dublin Office"></div>
+<div class="filter-group"><label>Contact</label><input type="text" id="adminContact" placeholder="Contact name"></div>
+<div class="filter-group"><label>Email</label><input type="email" id="adminEmail" placeholder="email@example.com"></div>
+<div class="filter-group" style="grid-column:span 2"><label>Description</label><textarea id="adminDesc" placeholder="Event description..."></textarea></div>
+<div class="filter-group"><label>Countries</label><input type="text" id="adminCountries" placeholder="all or: ireland,uk"></div>
+<div class="filter-group"><label>Key Event?</label><select id="adminKey"><option value="false">No</option><option value="true">⭐ Yes - Key Event</option></select></div>
+</div>
+<div class="admin-buttons">
+<button class="btn btn-success" onclick="saveEvent()">💾 Save Event</button>
+<button class="btn btn-secondary" onclick="clearAdminForm()">🗑️ Clear Form</button>
+<input type="hidden" id="editingEventId" value="">
+</div>
+<div class="admin-data-buttons">
+<button class="btn btn-primary" onclick="exportAllData()">📥 Export All Data (JSON)</button>
+<button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">📤 Import Data</button>
+<input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+<button class="btn btn-danger" onclick="resetToDefault()">🔄 Reset to Default</button>
+</div>
+</div>
+
+<div class="filters">
+<div class="filters-row">
+<div class="filter-group"><label>🌍 Region</label><select id="regionFilter"><option value="all">All Regions</option><option value="emea">EMEA</option></select></div>
+<div class="filter-group"><label>🏳️ Country</label><select id="countryFilter"><option value="all">All Countries</option></select></div>
+<div class="filter-group"><label>📁 Source</label><select id="sourceFilter"><option value="all">All Sources</option><option value="vhibespoke">Vhi Bespoke</option><option value="vhicommunity">Vhi Community</option><option value="rsm">RSM</option><option value="optum">Optum</option><option value="erg">ERG</option><option value="sites">Sites</option><option value="nudge">Nudge</option><option value="benefits">Benefits Team</option></select></div>
+<div class="filter-group"><label>📅 Month</label><select id="monthFilter"><option value="all">All Months</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div>
+<div class="filter-group"><label>🎯 Pillar</label><select id="pillarFilter"><option value="all">All Pillars</option><option value="emotional">💜 Emotional</option><option value="financial">💚 Financial</option><option value="physical">💙 Physical</option></select></div>
+<div class="filter-group"><label>📍 Format</label><select id="formatFilter"><option value="all">All Formats</option><option value="virtual">💻 Virtual</option><option value="onsite">🏢 Onsite</option><option value="hybrid">🔄 Hybrid</option></select></div>
+</div>
+</div>
+
+<div class="active-filters"><span class="active-filters-label">Active Filters:</span><div id="activeFilterTags"></div></div>
+<div class="quick-stats" id="quickStats"></div>
+
+<div class="calendar-view active"><div class="calendar"><div class="month-grid" id="calendarGrid"></div></div></div>
+<div class="timeline-view"><div class="timeline"><div class="timeline-container" id="timelineContainer"></div></div></div>
+<div class="dashboard-view"><div class="dashboard"><div class="dashboard-grid" id="dashboardGrid"></div></div></div>
+
+<footer class="footer">
+<div class="footer-left"><strong>PayPal Global Benefits Team - EMEA</strong> • Emotional • Financial • Physical • Updated: January 2026</div>
+<div class="footer-stats" id="footerStats"></div>
+</footer>
+</div>
+
+<div class="modal-overlay" id="eventModal"><div class="modal"><div class="modal-header"><div class="modal-header-content"><div class="modal-title"><span id="modalIcon"></span><span id="modalTitle"></span></div><div class="modal-subtitle" id="modalSubtitle"></div></div><button class="modal-close" onclick="closeEventModal()">✕</button></div><div class="modal-body"><div class="modal-section"><div class="modal-section-title">Description</div><div class="modal-description" id="modalDescription"></div></div><div class="modal-section"><div class="modal-section-title">Details</div><div class="modal-details" id="modalDetails"></div></div><div class="modal-section"><div class="modal-section-title">Tags</div><div class="modal-tags" id="modalTags"></div></div></div><div class="modal-footer"><button class="btn btn-outlook" onclick="addToOutlook()">📅 Add to Outlook</button><button class="btn btn-google" onclick="addToGoogle()">📅 Add to Google</button><button class="btn btn-secondary" onclick="closeEventModal()">Close</button></div></div></div>
+
+<div class="modal-overlay" id="exportModal"><div class="modal"><div class="modal-header"><div class="modal-header-content"><div class="modal-title">📤 Export Calendar</div><div class="modal-subtitle">Download or share your filtered events</div></div><button class="modal-close" onclick="closeExportModal()">✕</button></div><div class="modal-body"><div style="display:flex;flex-direction:column;gap:12px"><div style="padding:16px;border:2px solid var(--pp-border);border-radius:12px;cursor:pointer" onclick="exportCSV()"><strong>📊 Export to CSV</strong><br><small>Download as spreadsheet</small></div><div style="padding:16px;border:2px solid var(--pp-border);border-radius:12px;cursor:pointer" onclick="window.print()"><strong>🖨️ Print / PDF</strong><br><small>Print or save as PDF</small></div></div></div></div></div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const regions={emea:{name:"EMEA",countries:{ireland:{name:"Ireland",flag:"🇮🇪"},belgium:{name:"Belgium",flag:"🇧🇪"},france:{name:"France",flag:"🇫🇷"},germany:{name:"Germany",flag:"🇩🇪"},israel:{name:"Israel",flag:"🇮🇱"},italy:{name:"Italy",flag:"🇮🇹"},luxembourg:{name:"Luxembourg",flag:"🇱🇺"},netherlands:{name:"Netherlands",flag:"🇳🇱"},poland:{name:"Poland",flag:"🇵🇱"},russia:{name:"Russia",flag:"🇷🇺"},spain:{name:"Spain",flag:"🇪🇸"},sweden:{name:"Sweden",flag:"🇸🇪"},uk:{name:"United Kingdom",flag:"🇬🇧"}}}};
+const sourceNames={vhibespoke:"Vhi Bespoke",vhicommunity:"Vhi Community",rsm:"RSM",optum:"Optum",erg:"ERG",sites:"Sites",nudge:"Nudge",benefits:"Benefits Team"};
+const monthNames=["January","February","March","April","May","June","July","August","September","October","November","December"];
+let darkMode=false,currentEvent=null,adminMode=false,eventIdCounter=1000;
+
+const defaultCalendarData={
+January:{moment:"🎆 New Year / International Mentoring Day (17th)",events:[
+{id:1,n:"Remote Gym: 6 Weeks to a Fitter You",p:"physical",i:"💪",desc:"Join our 6-week fitness programme to kickstart your 2026 health journey with expert trainers.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"Tue & Thu, 12:00-12:45 GMT",contact:"Vhi Wellness Team",email:"wellness@vhi.ie",day:7,month:1},
+{id:2,n:"Financial Wellbeing: Taking Charge with askpaul",p:"financial",i:"💰",desc:"Expert financial guidance with Paul Merriman covering budgeting, savings, and investment basics.",src:"vhibespoke",countries:["ireland"],key:true,format:"virtual",time:"13:00-14:00 GMT",contact:"Paul Merriman",email:"info@askpaul.ie",day:22,month:1,date:"22nd"},
+{id:3,n:"Your 2026 Game Plan: Success Starts Now",p:"emotional",i:"🎯",desc:"Goal-setting and motivation webinar for personal and professional development.",src:"vhicommunity",countries:["ireland"],format:"virtual",time:"11:00-12:00 GMT",contact:"Vhi Community Events",email:"community@vhi.ie",day:16,month:1,date:"16th"},
+{id:4,n:"New Year Benefits Overview",p:"emotional",i:"🎉",desc:"Annual benefits overview highlighting key programmes, deadlines, and new offerings for 2026.",src:"benefits",countries:["all"],format:"virtual",contact:"Benefits Team",email:"benefits.emea@paypal.com",day:1,month:1,date:"1st"},
+{id:5,n:"International Mentoring Day",p:"emotional",i:"🤝",desc:"Celebrate mentorship programmes with networking sessions and mentor-mentee matching opportunities.",src:"erg",countries:["all"],format:"hybrid",time:"10:00-16:00 local time",contact:"Talent Development",email:"mentoring@paypal.com",day:17,month:1,date:"17th"}
+]},
+February:{moment:"✊ Black History Month / Lunar New Year (12th)",events:[
+{id:6,n:"Healthcheck @Work Screening",p:"physical",i:"🏥",desc:"Comprehensive onsite health screening: blood pressure, cholesterol, BMI, lifestyle assessment.",src:"vhibespoke",countries:["ireland"],key:true,format:"onsite",time:"09:00-17:00 GMT",room:"Dublin Office - Wellness Room (Floor 2)",contact:"Vhi Screening Team",email:"screening@vhi.ie",day:17,month:2,date:"17-19th"},
+{id:7,n:"Chair Massage",p:"physical",i:"💆",desc:"15-minute relaxation massage sessions. Walk-ins welcome or book your preferred slot.",src:"vhibespoke",countries:["ireland"],format:"onsite",time:"10:00-16:00 GMT",room:"Dublin Office - Quiet Room",contact:"Reception",email:"dublin.reception@paypal.com",day:10,month:2,date:"10th"},
+{id:8,n:"World Cancer Day Awareness",p:"physical",i:"🎗️",desc:"Cancer prevention and early detection awareness webinar with oncology specialists.",src:"vhicommunity",countries:["ireland"],format:"virtual",time:"12:00-13:00 GMT",contact:"Vhi Health Promotion",email:"health@vhi.ie",day:4,month:2,date:"4th"},
+{id:9,n:"Black History Month Events",p:"emotional",i:"✊",desc:"A month of events celebrating Black history, culture, and contributions across all regions.",src:"erg",countries:["all"],key:true,erg:"Amplify",format:"hybrid",contact:"Amplify ERG",email:"amplify@paypal.com",day:1,month:2,date:"All Month"},
+{id:10,n:"Lunar New Year Celebration",p:"emotional",i:"🐉",desc:"Celebrate the Year of the Snake with cultural activities, traditional food, and performances.",src:"erg",countries:["all"],erg:"Rise",format:"hybrid",time:"12:00-14:00 local time",contact:"Rise ERG",email:"rise@paypal.com",day:12,month:2,date:"12th"},
+{id:11,n:"RSM Pension Session Webinar",p:"financial",i:"💼",desc:"Expert pension guidance session covering retirement planning for UK employees.",src:"rsm",countries:["uk"],format:"virtual",time:"12:00-13:00 GMT",contact:"RSM Pensions Team",email:"pensions@rsm.co.uk",day:25,month:2,date:"25th"},
+{id:12,n:"Heart Health Awareness",p:"physical",i:"❤️",desc:"Cardiovascular health awareness and prevention strategies.",src:"vhicommunity",countries:["ireland"],format:"virtual",time:"13:00-14:00 GMT",day:14,month:2,date:"14th"}
+]},
+March:{moment:"💜 Women's History Month / IWD (8th) / Trans Day of Visibility (31st)",events:[
+{id:13,n:"IWD Keynote Speaker Event",p:"emotional",i:"👩‍💼",desc:"International Women's Day flagship event featuring inspiring keynote speaker and panel discussion.",src:"vhibespoke",countries:["ireland"],key:true,format:"hybrid",time:"10:00-12:00 GMT",room:"Dublin Office - Town Hall & Virtual",contact:"Unity ERG Ireland",email:"unity.ireland@paypal.com",day:8,month:3,date:"8th"},
+{id:14,n:"6 Week Yoga Flow Programme",p:"physical",i:"🧘",desc:"Weekly yoga sessions suitable for all levels, focusing on flexibility, strength, and mindfulness.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"Thursdays, 17:30-18:30 GMT",contact:"Vhi Yoga Instructor",email:"yoga@vhi.ie",day:6,month:3,date:"6th onwards"},
+{id:15,n:"Financial Event with Paul Merriman",p:"financial",i:"💰",desc:"Second session of financial wellbeing series with askpaul.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"13:00-14:00 GMT",contact:"Paul Merriman",email:"info@askpaul.ie",day:19,month:3,date:"19th"},
+{id:16,n:"Desk Stretch & Mobility",p:"physical",i:"🤸",desc:"Quick desk-based stretches and mobility exercises for office workers.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"12:30-13:00 GMT",day:12,month:3,date:"12th"},
+{id:17,n:"World Sleep Day",p:"physical",i:"😴",desc:"Understanding sleep hygiene and improving rest quality.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:14,month:3,date:"14th"},
+{id:18,n:"Menopause & Perimenopause Support",p:"physical",i:"🌸",desc:"Expert-led session on managing menopause symptoms and workplace support.",src:"vhicommunity",countries:["ireland"],format:"virtual",time:"13:00-14:00 GMT",contact:"Vhi Women's Health",email:"womenshealth@vhi.ie",day:11,month:3,date:"11th"},
+{id:19,n:"Women's History Month Events",p:"emotional",i:"💜",desc:"Month-long celebration of women's achievements with speaker series and workshops.",src:"erg",countries:["all"],key:true,erg:"Unity",format:"hybrid",contact:"Unity ERG",email:"unity@paypal.com",day:1,month:3,date:"All Month"},
+{id:20,n:"Nudge Financial Wellbeing Webinar",p:"financial",i:"📈",desc:"Interactive financial wellbeing session for UK employees covering budgeting and savings.",src:"nudge",countries:["uk"],format:"virtual",time:"13:00-14:00 GMT",contact:"Nudge Team",email:"support@nudge.co",day:4,month:3,date:"4th"},
+{id:21,n:"Global Day of Unplugging",p:"emotional",i:"📵",desc:"Digital wellness awareness - encouraging time away from screens.",src:"benefits",countries:["all"],format:"virtual",day:7,month:3,date:"6-7th"},
+{id:22,n:"Transgender Day of Visibility",p:"emotional",i:"🏳️‍⚧️",desc:"Supporting and celebrating transgender colleagues.",src:"erg",countries:["all"],erg:"Pride",format:"virtual",day:31,month:3,date:"31st"}
+]},
+April:{moment:"🌱 Thrive Heritage Month / World Autism Day (2nd) / Earth Day (22nd)",events:[
+{id:23,n:"6 Week HIIT Classes",p:"physical",i:"🏋️",desc:"High-intensity interval training programme for all fitness levels.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"Tue & Fri, 12:15-12:45 GMT",contact:"Vhi Fitness",email:"fitness@vhi.ie",day:1,month:4,date:"1st onwards"},
+{id:24,n:"6 Weeks Breathwork Program",p:"emotional",i:"🌬️",desc:"Practical breathing techniques and stress management strategies over 6 weeks.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"13:00-14:00 GMT",contact:"Vhi Mental Health",email:"mentalhealth@vhi.ie",day:9,month:4,date:"9th onwards"},
+{id:25,n:"Workplace Wellbeing Day",p:"emotional",i:"🌟",desc:"Celebrating workplace wellness with activities and resources.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:25,month:4,date:"25th"},
+{id:26,n:"World Health Day",p:"physical",i:"🩺",desc:"Global health awareness and wellness check reminders.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:7,month:4,date:"7th"},
+{id:27,n:"Thrive Heritage Month Events",p:"emotional",i:"🌱",desc:"Celebrating neurodiversity and disability inclusion throughout April.",src:"erg",countries:["all"],key:true,erg:"Thrive",format:"hybrid",contact:"Thrive ERG",email:"thrive@paypal.com",day:1,month:4,date:"All Month"},
+{id:28,n:"World Autism Awareness Day",p:"emotional",i:"💙",desc:"Understanding autism in the workplace: awareness session and resource sharing.",src:"erg",countries:["all"],erg:"Thrive",format:"virtual",time:"14:00-15:30 GMT",contact:"Thrive ERG",email:"thrive@paypal.com",day:2,month:4,date:"2nd"},
+{id:29,n:"Earth Day Activities",p:"physical",i:"🌍",desc:"Global sustainability initiatives including tree planting and clean-up events.",src:"erg",countries:["all"],format:"hybrid",contact:"Green Team",email:"sustainability@paypal.com",day:22,month:4,date:"22nd"}
+]},
+May:{moment:"🧠 AAPI Heritage Month / Mental Health Awareness Week (12-18th)",events:[
+{id:30,n:"Mental Health Awareness Event",p:"emotional",i:"🧠",desc:"Expert speakers discussing mental wellbeing, resilience, and support resources.",src:"vhibespoke",countries:["ireland"],key:true,format:"hybrid",time:"10:00-12:00 GMT",room:"Dublin Office - Town Hall & Virtual",contact:"Vhi Mental Health",email:"mentalhealth@vhi.ie",day:14,month:5,date:"14th"},
+{id:31,n:"Chair Massage",p:"physical",i:"💆",desc:"15-minute relaxation massage sessions during Mental Health Awareness Week.",src:"vhibespoke",countries:["ireland"],format:"onsite",time:"10:00-16:00 GMT",room:"Dublin Office - Quiet Room",contact:"Reception",email:"dublin.reception@paypal.com",day:12,month:5,date:"12-16th"},
+{id:32,n:"4 Wellness Taster Sessions",p:"physical",i:"✨",desc:"Sample different wellness activities: yoga, pilates, meditation, fitness.",src:"vhibespoke",countries:["ireland"],format:"virtual",day:5,month:5,date:"5th onwards"},
+{id:33,n:"Nutrition for Mental Health",p:"physical",i:"🥗",desc:"How diet affects mood and mental wellbeing.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:20,month:5,date:"20th"},
+{id:34,n:"AAPI Heritage Month Events",p:"emotional",i:"🌸",desc:"Celebrating Asian American and Pacific Islander heritage.",src:"erg",countries:["all"],key:true,erg:"Rise",format:"hybrid",contact:"Rise ERG",email:"rise@paypal.com",day:1,month:5,date:"All Month"},
+{id:35,n:"GAAD - Accessibility Day",p:"emotional",i:"♿",desc:"Global Accessibility Awareness Day: digital accessibility and inclusive design.",src:"erg",countries:["all"],erg:"Thrive",format:"virtual",time:"15:00-16:30 GMT",contact:"Thrive ERG",email:"thrive@paypal.com",day:15,month:5,date:"15th"}
+]},
+June:{moment:"🏳️‍🌈 Pride Month / Juneteenth (18th) / Windrush Day (26th)",events:[
+{id:36,n:"Summer Fitness Challenge",p:"physical",i:"☀️",desc:"6-week summer wellness programme with team challenges and prizes.",src:"vhibespoke",countries:["ireland"],format:"hybrid",time:"June-July",contact:"Vhi Fitness",email:"fitness@vhi.ie",day:1,month:6,date:"1st onwards"},
+{id:37,n:"Pride Ireland Event",p:"emotional",i:"🏳️‍🌈",desc:"Dublin Pride celebrations including the parade and networking.",src:"erg",countries:["ireland"],key:true,erg:"Pride",format:"onsite",time:"11:00-17:00 GMT",room:"Dublin City Centre",contact:"Pride ERG Ireland",email:"pride.ireland@paypal.com",day:19,month:6,date:"19th"},
+{id:38,n:"Global Pride Events",p:"emotional",i:"🏳️‍🌈",desc:"Pride celebrations happening across all PayPal locations worldwide.",src:"erg",countries:["all"],key:true,erg:"Pride",format:"hybrid",contact:"Pride ERG",email:"pride@paypal.com",day:1,month:6,date:"All Month"},
+{id:39,n:"Juneteenth Leadership Event",p:"emotional",i:"✊",desc:"Commemorating Juneteenth with leadership panel and discussions.",src:"erg",countries:["all"],key:true,erg:"Amplify",format:"virtual",time:"16:00-17:30 GMT",contact:"Amplify ERG",email:"amplify@paypal.com",day:18,month:6,date:"18th"},
+{id:40,n:"Windrush Day - Patrick Vernon OBE",p:"emotional",i:"🚢",desc:"Guest speaker event celebrating Windrush generation contributions.",src:"erg",countries:["all"],key:true,erg:"Amplify",format:"virtual",time:"14:00-15:30 GMT",contact:"Amplify ERG",email:"amplify@paypal.com",day:26,month:6,date:"26th"},
+{id:41,n:"Impact Day Tag Rugby Blitz",p:"physical",i:"🏉",desc:"Team building sports event with tag rugby tournament.",src:"sites",countries:["ireland"],format:"onsite",room:"Sandymount, Dublin",day:11,month:6,date:"11-12th"},
+{id:42,n:"World Environment Day",p:"physical",i:"🌿",desc:"Environmental awareness and sustainability initiatives.",src:"benefits",countries:["all"],format:"virtual",day:5,month:6,date:"5th"}
+]},
+July:{moment:"🤝 International Friendship Day (30th)",events:[
+{id:43,n:"Let's Talk Men's Health Event",p:"physical",i:"👨‍⚕️",desc:"Men's health awareness covering physical and mental health topics.",src:"vhibespoke",countries:["ireland"],key:true,format:"hybrid",time:"12:00-13:30 GMT",room:"Dublin Office - Town Hall & Virtual",contact:"Vhi Men's Health",email:"menshealth@vhi.ie",day:10,month:7,date:"10th"},
+{id:44,n:"6 Week Mindfulness Programme",p:"emotional",i:"🧘",desc:"Weekly guided mindfulness and meditation sessions for stress reduction.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"Mondays, 08:00-08:30 GMT",contact:"Vhi Mindfulness Coach",email:"mindfulness@vhi.ie",day:7,month:7,date:"7th onwards"},
+{id:45,n:"Financial Confidence with askpaul",p:"financial",i:"💰",desc:"Building financial confidence: investing basics and long-term planning.",src:"vhicommunity",countries:["ireland"],format:"virtual",time:"13:00-14:00 GMT",contact:"Paul Merriman",email:"info@askpaul.ie",day:16,month:7,date:"16th"},
+{id:46,n:"Fertility Support Session",p:"physical",i:"👶",desc:"Support and resources for employees on fertility journeys.",src:"erg",countries:["all"],erg:"Total Wellness",format:"virtual",time:"10:00-11:00 GMT",day:9,month:7,date:"9th"},
+{id:47,n:"Climate Week & Sustainability Events",p:"physical",i:"🌱",desc:"Sustainability focused activities and awareness sessions.",src:"erg",countries:["all"],format:"hybrid",day:21,month:7,date:"2nd half"}
+]},
+August:{moment:"🚀 World Entrepreneur Day (21st)",events:[
+{id:48,n:"Chair Massage",p:"physical",i:"💆",desc:"15-minute relaxation massage sessions.",src:"vhibespoke",countries:["ireland"],format:"onsite",time:"10:00-16:00 GMT",room:"Dublin Office - Quiet Room",contact:"Reception",email:"dublin.reception@paypal.com",day:19,month:8,date:"19-21st"},
+{id:49,n:"Energising Office Yoga",p:"physical",i:"🧘",desc:"Quick desk-based yoga routines for energy and focus.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"Wednesdays, 15:00-15:20 GMT",contact:"Vhi Yoga",email:"yoga@vhi.ie",day:6,month:8,date:"Wednesdays"},
+{id:50,n:"Understanding Neurodiversity: A Parent's Guide",p:"emotional",i:"🧩",desc:"Support for parents of neurodiverse children.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:13,month:8,date:"13th"},
+{id:51,n:"What's in the Label - Nutrition",p:"physical",i:"🏷️",desc:"Understanding food labels and making healthier choices.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:20,month:8,date:"20th"},
+{id:52,n:"Beach Clean & Eco Fair",p:"physical",i:"🏖️",desc:"Sustainability team building event at Sandymount Beach.",src:"sites",countries:["ireland"],format:"onsite",time:"10:00-14:00 GMT",room:"Sandymount Beach, Dublin",contact:"Green Team Ireland",email:"greenteam.ireland@paypal.com",day:16,month:8,date:"16th"},
+{id:53,n:"World Entrepreneur Day",p:"financial",i:"🚀",desc:"Celebrating entrepreneurship with resources and speaker sessions.",src:"benefits",countries:["all"],format:"virtual",time:"14:00-16:00 GMT",contact:"Innovation Team",email:"innovation@paypal.com",day:21,month:8,date:"21st"}
+]},
+September:{moment:"🌮 Latinx Heritage Month (15th-Oct 15th)",events:[
+{id:54,n:"Healthstation Screening",p:"physical",i:"🏥",desc:"Comprehensive onsite health screening with detailed health report.",src:"vhibespoke",countries:["ireland"],key:true,format:"onsite",time:"09:00-17:00 GMT",room:"Dublin Office - Wellness Room",contact:"Vhi Screening Team",email:"screening@vhi.ie",day:21,month:9,date:"21-28th"},
+{id:55,n:"Vhi 6 Week Strength Classes",p:"physical",i:"💪",desc:"Building functional strength through progressive resistance training.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"Mon & Thu, 12:15-12:45 GMT",contact:"Vhi Fitness",email:"fitness@vhi.ie",day:1,month:9,date:"1st onwards"},
+{id:56,n:"Remote Gym: 6 Weeks Sweat Strength & Stamina",p:"physical",i:"🏃",desc:"Virtual fitness programme combining cardio and strength.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:8,month:9,date:"8th onwards"},
+{id:57,n:"World Suicide Prevention Day",p:"emotional",i:"💜",desc:"Mental health awareness and crisis support resources.",src:"vhicommunity",countries:["ireland"],format:"virtual",time:"12:00-13:00 GMT",contact:"Vhi Mental Health",email:"mentalhealth@vhi.ie",day:10,month:9,date:"10th"},
+{id:58,n:"Nutrition Series: 4 Weeks to Smarter Eating",p:"physical",i:"🥗",desc:"Four-week nutrition programme for healthier eating habits.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:15,month:9,date:"15th onwards"},
+{id:59,n:"Latinx Heritage Month Events",p:"emotional",i:"🌮",desc:"Celebrating Latinx culture and contributions.",src:"erg",countries:["all"],key:true,erg:"Aliados",format:"hybrid",contact:"Aliados ERG",email:"aliados@paypal.com",day:15,month:9,date:"15th onwards"},
+{id:60,n:"World Cleanup Day",p:"physical",i:"🧹",desc:"Global cleanup initiative and environmental action.",src:"benefits",countries:["all"],format:"hybrid",day:19,month:9,date:"19th"}
+]},
+October:{moment:"🧠 World Mental Health Day (10th) / Black History EMEA",events:[
+{id:61,n:"World Mental Health Day Keynote",p:"emotional",i:"🧠",desc:"FLAGSHIP EVENT: Renowned speaker on mental wellbeing and resilience.",src:"vhibespoke",countries:["ireland"],key:true,format:"hybrid",time:"10:00-12:00 GMT",room:"Dublin Office - Town Hall & Virtual",contact:"Vhi Mental Health",email:"mentalhealth@vhi.ie",day:10,month:10,date:"10th"},
+{id:62,n:"6 Weeks Restorative Yoga",p:"physical",i:"🧘",desc:"Gentle, restorative yoga focusing on relaxation and recovery.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"Fridays, 17:00-18:00 GMT",contact:"Vhi Yoga",email:"yoga@vhi.ie",day:3,month:10,date:"3rd onwards"},
+{id:63,n:"Women's Wellness: Navigating Hormonal Health",p:"physical",i:"🌸",desc:"Understanding hormonal changes and women's health.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:15,month:10,date:"15th"},
+{id:64,n:"World Menopause Day: Pelvic Health",p:"physical",i:"🩺",desc:"Menopause awareness with focus on pelvic health.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:18,month:10,date:"18th"},
+{id:65,n:"Black History Month EMEA Events",p:"emotional",i:"✊",desc:"EMEA-specific Black History Month celebrations and speaker events.",src:"erg",countries:["all"],key:true,erg:"Amplify",format:"hybrid",contact:"Amplify ERG",email:"amplify@paypal.com",day:1,month:10,date:"All Month"},
+{id:66,n:"Community Impact Grants",p:"emotional",i:"💝",desc:"Supporting community initiatives through grant programmes.",src:"erg",countries:["all"],erg:"Community",format:"virtual",day:15,month:10,date:"15th"},
+{id:67,n:"Coming Out Day",p:"emotional",i:"🏳️‍🌈",desc:"Supporting LGBTQ+ colleagues and allies.",src:"erg",countries:["all"],erg:"Pride",format:"virtual",day:11,month:10,date:"11th"},
+{id:68,n:"Ada Lovelace Day",p:"emotional",i:"👩‍💻",desc:"Celebrating women in STEM.",src:"erg",countries:["all"],erg:"Unity",format:"virtual",time:"15:00-16:30 GMT",contact:"Unity ERG",email:"unity@paypal.com",day:13,month:10,date:"13th"},
+{id:69,n:"Disability Employment Awareness Month",p:"emotional",i:"♿",desc:"Disability awareness and Rethink Care resources.",src:"benefits",countries:["all"],format:"virtual",day:1,month:10,date:"All Month"}
+]},
+November:{moment:"🎖️ Serve Heritage Month / Diwali (8th)",events:[
+{id:70,n:"International Men's Day Event",p:"physical",i:"👨",desc:"Highlighting men's health issues and mental health support.",src:"vhibespoke",countries:["ireland"],key:true,format:"hybrid",time:"12:00-13:30 GMT",room:"Dublin Office - Meeting Room A & Virtual",contact:"Vhi Men's Health",email:"menshealth@vhi.ie",day:19,month:11,date:"19th"},
+{id:71,n:"Managing Diabetes",p:"physical",i:"🩺",desc:"Diabetes awareness, prevention, and management strategies.",src:"vhicommunity",countries:["ireland"],format:"virtual",time:"12:00-13:00 GMT",contact:"Vhi Health",email:"health@vhi.ie",day:13,month:11,date:"13th"},
+{id:72,n:"Financial Wellbeing: Build Confidence with Money",p:"financial",i:"💰",desc:"Year-end financial planning and confidence building.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:20,month:11,date:"20th"},
+{id:73,n:"Serve Heritage Month Events",p:"emotional",i:"🎖️",desc:"Honouring military veterans and their families.",src:"erg",countries:["all"],key:true,erg:"Serve",format:"hybrid",contact:"Serve ERG",email:"serve@paypal.com",day:1,month:11,date:"All Month"},
+{id:74,n:"Diwali Celebration",p:"emotional",i:"🪔",desc:"Festival of lights celebration with traditional food and activities.",src:"erg",countries:["all"],erg:"Rise",format:"hybrid",time:"12:00-14:00 local time",contact:"Rise ERG",email:"rise@paypal.com",day:8,month:11,date:"8th"},
+{id:75,n:"Global Entrepreneurship Week",p:"financial",i:"🚀",desc:"Innovation and entrepreneurship focus with resources and events.",src:"erg",countries:["all"],format:"virtual",contact:"Innovation Team",email:"innovation@paypal.com",day:16,month:11,date:"16-22nd"},
+{id:76,n:"Veterans Day",p:"emotional",i:"🎖️",desc:"Honouring veterans and their service.",src:"benefits",countries:["all"],format:"virtual",day:11,month:11,date:"11th"},
+{id:77,n:"World Kindness Day",p:"emotional",i:"💖",desc:"Promoting kindness and wellbeing initiatives.",src:"benefits",countries:["all"],format:"virtual",day:13,month:11,date:"13th"},
+{id:78,n:"Transgender Day of Remembrance",p:"emotional",i:"🏳️‍⚧️",desc:"Remembering transgender lives lost and supporting the community.",src:"erg",countries:["all"],erg:"Pride",format:"virtual",day:20,month:11,date:"20th"}
+]},
+December:{moment:"✨ Believe Heritage Month / Giving Tuesday (1st)",events:[
+{id:79,n:"Winter Ready: Stay Safe",p:"physical",i:"🌨️",desc:"Winter health and safety tips for the cold season.",src:"vhibespoke",countries:["ireland"],format:"virtual",time:"12:00-12:45 GMT",contact:"Vhi Health",email:"health@vhi.ie",day:4,month:12,date:"4th"},
+{id:80,n:"Managing Holiday Stress",p:"emotional",i:"🎄",desc:"Coping strategies for the festive season pressures.",src:"vhicommunity",countries:["ireland"],format:"virtual",time:"13:00-14:00 GMT",contact:"Vhi Mental Health",email:"mentalhealth@vhi.ie",day:9,month:12,date:"9th"},
+{id:81,n:"International Day of Persons with Disabilities",p:"emotional",i:"♿",desc:"Disability awareness and inclusion resources.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:3,month:12,date:"3rd"},
+{id:82,n:"Financial Wellbeing: New Year Planning",p:"financial",i:"📅",desc:"Setting financial goals and creating a budget for 2027.",src:"vhicommunity",countries:["ireland"],format:"virtual",day:17,month:12,date:"17th"},
+{id:83,n:"Believe Heritage Month Events",p:"emotional",i:"✨",desc:"Celebrating faith, spirituality, and diverse beliefs.",src:"erg",countries:["all"],key:true,erg:"Believe",format:"hybrid",contact:"Believe ERG",email:"believe@paypal.com",day:1,month:12,date:"All Month"},
+{id:84,n:"Giving Tuesday",p:"emotional",i:"💝",desc:"Global day of charitable giving with matched donations.",src:"erg",countries:["all"],format:"hybrid",contact:"Community Impact",email:"giving@paypal.com",day:1,month:12,date:"1st"},
+{id:85,n:"World Meditation Day",p:"emotional",i:"🧘",desc:"Global mindfulness event with guided meditation sessions.",src:"benefits",countries:["all"],format:"virtual",time:"Sessions at 08:00, 12:00, 17:00 GMT",contact:"Wellbeing Team",email:"wellbeing@paypal.com",day:21,month:12,date:"21st"},
+{id:86,n:"International Volunteer Day",p:"emotional",i:"🤝",desc:"Celebrating volunteering and community service.",src:"benefits",countries:["all"],format:"virtual",day:5,month:12,date:"5th"}
+]}
+};
+
+let calendarData = JSON.parse(JSON.stringify(defaultCalendarData));
+const STORAGE_KEY = 'paypal_benefits_calendar_2026_v2';
+const today = new Date();
+const currentMonth = monthNames[today.getMonth()];
+const currentDay = today.getDate();
+const currentYear = today.getFullYear();
+
+function loadFromStorage(){try{const s=localStorage.getItem(STORAGE_KEY);if(s){calendarData=JSON.parse(s);showToast('Loaded saved data','💾');}}catch(e){}}
+function saveToStorage(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(calendarData));}catch(e){}}
+function updateCurrentDateBadge(){document.getElementById('currentDateBadge').textContent='📅 '+today.toLocaleDateString('en-GB',{weekday:'long',year:'numeric',month:'long',day:'numeric'});}
+function isPastEvent(month,day){if(currentYear>2026)return true;if(currentYear<2026)return false;const mi=monthNames.indexOf(month);const ci=today.getMonth();if(mi<ci)return true;if(mi===ci&&day<currentDay)return true;return false;}
+function getCountryInfo(c){for(let r in regions)if(regions[r].countries[c])return{...regions[r].countries[c],region:r};return null;}
+function showToast(msg,icon='✔'){const t=document.getElementById('toast');t.innerHTML=`<span>${icon}</span> ${msg}`;t.classList.add('active');setTimeout(()=>t.classList.remove('active'),3000);}
+function toggleTheme(){darkMode=!darkMode;document.documentElement.setAttribute('data-theme',darkMode?'dark':'light');document.getElementById('themeBtn').textContent=darkMode?'☀️':'🌙';}
+
+function toggleAdminMode(){
+adminMode=!adminMode;
+document.getElementById('adminPanel').classList.toggle('active',adminMode);
+document.getElementById('adminBtn').classList.toggle('active',adminMode);
+document.getElementById('adminBtn').textContent=adminMode?'🔒 Exit Admin':'🔧 Admin';
+document.body.classList.toggle('admin-mode',adminMode);
+renderCalendar();
+showToast(adminMode?'Admin mode enabled - Edit/Delete buttons visible':'Admin mode disabled','🔧');
+}
+
+function clearAdminForm(){['adminName','adminDay','adminDate','adminIcon','adminTime','adminRoom','adminContact','adminEmail','adminDesc','adminCountries'].forEach(id=>document.getElementById(id).value='');document.getElementById('adminMonth').value='January';document.getElementById('adminPillar').value='emotional';document.getElementById('adminSource').value='vhibespoke';document.getElementById('adminFormat').value='virtual';document.getElementById('adminKey').value='false';document.getElementById('editingEventId').value='';}
+
+function saveEvent(){const name=document.getElementById('adminName').value.trim();const month=document.getElementById('adminMonth').value;const day=parseInt(document.getElementById('adminDay').value);if(!name||!month||!day){showToast('Please fill required fields','⚠️');return;}const event={id:document.getElementById('editingEventId').value||++eventIdCounter,n:name,p:document.getElementById('adminPillar').value,i:document.getElementById('adminIcon').value||'📅',desc:document.getElementById('adminDesc').value,src:document.getElementById('adminSource').value,countries:document.getElementById('adminCountries').value?document.getElementById('adminCountries').value.split(',').map(c=>c.trim()):['all'],format:document.getElementById('adminFormat').value,time:document.getElementById('adminTime').value,room:document.getElementById('adminRoom').value,contact:document.getElementById('adminContact').value,email:document.getElementById('adminEmail').value,day:day,month:monthNames.indexOf(month)+1,date:document.getElementById('adminDate').value||day.toString(),key:document.getElementById('adminKey').value==='true'};const editId=document.getElementById('editingEventId').value;if(editId){const events=calendarData[month].events;const idx=events.findIndex(e=>e.id==editId);if(idx>-1)events[idx]=event;showToast('Event updated!','✅');}else{if(!calendarData[month])calendarData[month]={moment:'',events:[]};calendarData[month].events.push(event);showToast('Event added!','✅');}saveToStorage();clearAdminForm();renderCalendar();}
+
+function editEvent(eventId,monthName){const event=calendarData[monthName].events.find(e=>e.id==eventId);if(!event)return;document.getElementById('adminName').value=event.n;document.getElementById('adminMonth').value=monthName;document.getElementById('adminDay').value=event.day;document.getElementById('adminDate').value=event.date||'';document.getElementById('adminPillar').value=event.p;document.getElementById('adminSource').value=event.src;document.getElementById('adminFormat').value=event.format||'virtual';document.getElementById('adminIcon').value=event.i;document.getElementById('adminTime').value=event.time||'';document.getElementById('adminRoom').value=event.room||'';document.getElementById('adminContact').value=event.contact||'';document.getElementById('adminEmail').value=event.email||'';document.getElementById('adminDesc').value=event.desc||'';document.getElementById('adminCountries').value=event.countries.join(',');document.getElementById('adminKey').value=event.key?'true':'false';document.getElementById('editingEventId').value=event.id;window.scrollTo({top:0,behavior:'smooth'});showToast('Editing event...','✏️');}
+
+function deleteEvent(eventId,monthName){if(!confirm('Are you sure you want to delete this event?'))return;calendarData[monthName].events=calendarData[monthName].events.filter(e=>e.id!=eventId);saveToStorage();renderCalendar();showToast('Event deleted','🗑️');}
+
+function exportAllData(){const blob=new Blob([JSON.stringify(calendarData,null,2)],{type:'application/json'});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download='PayPal_Benefits_Calendar_Data.json';link.click();showToast('Data exported!','📥');}
+function importData(event){const file=event.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=function(e){try{calendarData=JSON.parse(e.target.result);saveToStorage();renderCalendar();showToast('Data imported!','📤');}catch(err){showToast('Invalid JSON file','❌');}};reader.readAsText(file);event.target.value='';}
+function resetToDefault(){if(!confirm('Reset all data to default? This cannot be undone.'))return;calendarData=JSON.parse(JSON.stringify(defaultCalendarData));localStorage.removeItem(STORAGE_KEY);renderCalendar();showToast('Reset to default','🔄');}
+
+document.querySelectorAll('.view-btn').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active');const view=this.dataset.view;document.querySelectorAll('.calendar-view,.timeline-view,.dashboard-view').forEach(v=>v.classList.remove('active'));document.querySelector(`.${view}-view`).classList.add('active');if(view==='dashboard')renderDashboard();if(view==='timeline')renderTimeline();});});
+
+function updateCountryDropdown(){const sel=document.getElementById('countryFilter');sel.innerHTML='<option value="all">All Countries</option>';for(let c in regions.emea.countries){const o=document.createElement('option');o.value=c;o.textContent=`${regions.emea.countries[c].flag} ${regions.emea.countries[c].name}`;sel.appendChild(o);}}
+
+function getFilteredEvents(){const region=document.getElementById('regionFilter').value,country=document.getElementById('countryFilter').value,source=document.getElementById('sourceFilter').value,month=document.getElementById('monthFilter').value,pillar=document.getElementById('pillarFilter').value,format=document.getElementById('formatFilter').value,search=document.getElementById('searchInput').value.toLowerCase();const months=month==='all'?Object.keys(calendarData):[month];let allEvents=[];months.forEach(m=>{const data=calendarData[m];if(!data)return;data.events.forEach(e=>{if(source!=='all'&&e.src!==source)return;if(pillar!=='all'&&e.p!==pillar)return;if(format!=='all'&&e.format!==format)return;if(search&&!e.n.toLowerCase().includes(search)&&!(e.desc&&e.desc.toLowerCase().includes(search)))return;if(country!=='all'&&!e.countries.includes('all')&&!e.countries.includes(country))return;allEvents.push({...e,monthName:m});});});return allEvents;}
+
+function renderActiveFilters(){const filters=[{id:'regionFilter',label:'Region',all:'all'},{id:'countryFilter',label:'Country',all:'all'},{id:'sourceFilter',label:'Source',all:'all'},{id:'monthFilter',label:'Month',all:'all'},{id:'pillarFilter',label:'Pillar',all:'all'},{id:'formatFilter',label:'Format',all:'all'}];const search=document.getElementById('searchInput').value;let html='';filters.forEach(f=>{const val=document.getElementById(f.id).value;if(val!==f.all){const select=document.getElementById(f.id);const text=select.options[select.selectedIndex].text;html+=`<span class="filter-tag">${text}<button class="filter-tag-remove" onclick="clearFilter('${f.id}')">✕</button></span>`;}});if(search)html+=`<span class="filter-tag">"${search}"<button class="filter-tag-remove" onclick="clearSearch()">✕</button></span>`;if(html)html+=`<button class="clear-all-btn" onclick="resetFilters()">Clear All</button>`;else html='<span style="color:var(--pp-text-muted);font-size:0.8rem">No filters applied – showing all events</span>';document.getElementById('activeFilterTags').innerHTML=html;}
+
+function clearFilter(id){document.getElementById(id).value='all';renderCalendar();}
+function clearSearch(){document.getElementById('searchInput').value='';renderCalendar();}
+
+function openEventModal(e){currentEvent=e;document.getElementById('modalIcon').textContent=e.i;document.getElementById('modalTitle').textContent=e.n;document.getElementById('modalSubtitle').textContent=`${e.monthName} ${e.date||e.day} • ${sourceNames[e.src]}`;document.getElementById('modalDescription').textContent=e.desc||'No description available.';let details='';if(e.time)details+=`<div class="modal-detail"><div class="modal-detail-icon">🕐</div><div class="modal-detail-content"><div class="modal-detail-label">Time</div><div class="modal-detail-value">${e.time}</div></div></div>`;if(e.room)details+=`<div class="modal-detail"><div class="modal-detail-icon">📍</div><div class="modal-detail-content"><div class="modal-detail-label">Location</div><div class="modal-detail-value">${e.room}</div></div></div>`;if(e.contact)details+=`<div class="modal-detail"><div class="modal-detail-icon">👤</div><div class="modal-detail-content"><div class="modal-detail-label">Contact</div><div class="modal-detail-value">${e.contact}</div></div></div>`;if(e.email)details+=`<div class="modal-detail"><div class="modal-detail-icon">✉️</div><div class="modal-detail-content"><div class="modal-detail-label">Email</div><div class="modal-detail-value"><a href="mailto:${e.email}">${e.email}</a></div></div></div>`;document.getElementById('modalDetails').innerHTML=details||'<p style="color:var(--pp-text-muted)">No additional details.</p>';let tags=`<span class="tag tag-${e.p}">${e.p.charAt(0).toUpperCase()+e.p.slice(1)}</span>`;if(e.format)tags+=`<span class="tag tag-${e.format}">${e.format.charAt(0).toUpperCase()+e.format.slice(1)}</span>`;if(e.key)tags+=`<span class="tag tag-key">⭐ Key Event</span>`;if(e.erg)tags+=`<span class="tag tag-erg">${e.erg}</span>`;const countries=e.countries.includes('all')?'<span class="tag tag-country">🌍 Global</span>':e.countries.map(c=>{const ci=getCountryInfo(c);return ci?`<span class="tag tag-country">${ci.flag} ${ci.name}</span>`:''}).join('');tags+=countries;document.getElementById('modalTags').innerHTML=tags;document.getElementById('eventModal').classList.add('active');}
+function closeEventModal(){document.getElementById('eventModal').classList.remove('active');currentEvent=null;}
+
+function addToOutlook(){if(!currentEvent)return;const year=2026;const d=new Date(year,currentEvent.month-1,currentEvent.day,10,0,0);const subject=encodeURIComponent(currentEvent.n);const body=encodeURIComponent(`${currentEvent.desc||''}\n\nContact: ${currentEvent.contact||''}\nEmail: ${currentEvent.email||''}`);const location=encodeURIComponent(currentEvent.room||'Virtual');const start=d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';const url=`https://outlook.office.com/calendar/0/deeplink/compose?subject=${subject}&body=${body}&location=${location}&startdt=${start}`;window.open(url,'_blank');showToast('Opening Outlook...','📅');}
+function addToGoogle(){if(!currentEvent)return;const year=2026;const d=new Date(year,currentEvent.month-1,currentEvent.day,10,0,0);const text=encodeURIComponent(currentEvent.n);const details=encodeURIComponent(`${currentEvent.desc||''}\n\nContact: ${currentEvent.contact||''}`);const location=encodeURIComponent(currentEvent.room||'Virtual');const dates=d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')+'/'+d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');const url=`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&details=${details}&location=${location}&dates=${dates}`;window.open(url,'_blank');showToast('Opening Google Calendar...','📅');}
+
+function showExportModal(){document.getElementById('exportModal').classList.add('active');}
+function closeExportModal(){document.getElementById('exportModal').classList.remove('active');}
+function exportCSV(){const events=getFilteredEvents();let csv='Event Name,Date,Month,Pillar,Format,Source,Countries,Description,Contact,Email\n';events.forEach(e=>{const countries=e.countries.includes('all')?'Global':e.countries.map(c=>{const ci=getCountryInfo(c);return ci?ci.name:c;}).join('; ');csv+=`"${e.n}","${e.date||e.day}","${e.monthName}","${e.p}","${e.format||''}","${sourceNames[e.src]}","${countries}","${(e.desc||'').replace(/"/g,'""')}","${e.contact||''}","${e.email||''}"\n`;});const blob=new Blob([csv],{type:'text/csv'});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download='PayPal_Benefits_Calendar_2026.csv';link.click();closeExportModal();showToast('CSV exported!','📊');}
+
+function renderQuickStats(events){const keyCount=events.filter(e=>e.key).length;const virtualCount=events.filter(e=>e.format==='virtual').length;const onsiteCount=events.filter(e=>e.format==='onsite').length;const hybridCount=events.filter(e=>e.format==='hybrid').length;document.getElementById('quickStats').innerHTML=`<div class="quick-stat"><div class="quick-stat-icon">📅</div><div class="quick-stat-content"><div class="quick-stat-value">${events.length}</div><div class="quick-stat-label">Total Events</div></div></div><div class="quick-stat"><div class="quick-stat-icon">⭐</div><div class="quick-stat-content"><div class="quick-stat-value">${keyCount}</div><div class="quick-stat-label">Key Events</div></div></div><div class="quick-stat"><div class="quick-stat-icon">💻</div><div class="quick-stat-content"><div class="quick-stat-value">${virtualCount}</div><div class="quick-stat-label">Virtual</div></div></div><div class="quick-stat"><div class="quick-stat-icon">🏢</div><div class="quick-stat-content"><div class="quick-stat-value">${onsiteCount}</div><div class="quick-stat-label">Onsite</div></div></div><div class="quick-stat"><div class="quick-stat-icon">🔄</div><div class="quick-stat-content"><div class="quick-stat-value">${hybridCount}</div><div class="quick-stat-label">Hybrid</div></div></div>`;document.getElementById('footerStats').innerHTML=`<div class="footer-stat"><div class="footer-stat-value">${events.length}</div><div class="footer-stat-label">Events</div></div><div class="footer-stat"><div class="footer-stat-value">${keyCount}</div><div class="footer-stat-label">Key</div></div>`;}
+
+function renderTimeline(){const events=getFilteredEvents();const grouped={};events.forEach(e=>{if(!grouped[e.monthName])grouped[e.monthName]=[];grouped[e.monthName].push(e);});let html='<div class="timeline-line"></div>';monthNames.forEach(m=>{if(!grouped[m]||grouped[m].length===0)return;const monthEvents=grouped[m].sort((a,b)=>a.day-b.day);const isCurrentMonth=m===currentMonth&&currentYear===2026;html+=`<div class="timeline-month"><div class="timeline-month-header"><div class="timeline-month-dot" style="${isCurrentMonth?'background:#22C55E;':''}"></div><span class="timeline-month-name">${m} 2026</span>${isCurrentMonth?'<span class="current-month-badge">Current</span>':''}<span class="timeline-month-count">${monthEvents.length} events</span></div><div class="timeline-events">`;monthEvents.forEach(e=>{const past=isPastEvent(m,e.day);html+=`<div class="timeline-event ${e.key?'key':''} ${past?'past-event':''}" onclick='openEventModal(${JSON.stringify(e).replace(/'/g,"\\'")})'><div class="timeline-event-date"><div class="timeline-event-day">${e.day}</div><div class="timeline-event-month">${m.slice(0,3)}</div></div><div class="timeline-event-content"><div class="timeline-event-title">${e.i} ${e.n}${e.key?' ⭐':''}</div><div class="timeline-event-meta"><span class="tag tag-${e.p}">${e.p}</span>${e.format?`<span class="tag tag-${e.format}">${e.format}</span>`:''}</div></div></div>`;});html+=`</div></div>`;});document.getElementById('timelineContainer').innerHTML=html||'<div class="no-events"><div class="no-events-icon">🔭</div><div class="no-events-text">No events match your filters</div></div>';}
+
+function renderDashboard(){const events=getFilteredEvents();const byMonth={},byPillar={emotional:0,financial:0,physical:0},byFormat={virtual:0,onsite:0,hybrid:0},bySource={},byCountry={};let keyEvents=[];monthNames.forEach(m=>byMonth[m]=0);Object.keys(sourceNames).forEach(s=>bySource[s]=0);events.forEach(e=>{byMonth[e.monthName]=(byMonth[e.monthName]||0)+1;byPillar[e.p]++;if(e.format)byFormat[e.format]++;if(e.src)bySource[e.src]++;if(e.key)keyEvents.push(e);e.countries.forEach(c=>{byCountry[c]=(byCountry[c]||0)+1;});});const maxMonth=Math.max(...Object.values(byMonth),1);const totalPillar=byPillar.emotional+byPillar.financial+byPillar.physical||1;const pE=(byPillar.emotional/totalPillar*100).toFixed(0),pF=(byPillar.financial/totalPillar*100).toFixed(0),pP=(byPillar.physical/totalPillar*100).toFixed(0);keyEvents.sort((a,b)=>a.month-b.month||a.day-b.day);const topSources=Object.entries(bySource).filter(([k,v])=>v>0).sort((a,b)=>b[1]-a[1]);const topCountries=Object.entries(byCountry).filter(([k,v])=>k!=='all').sort((a,b)=>b[1]-a[1]).slice(0,5);document.getElementById('dashboardGrid').innerHTML=`<div class="dash-card" style="grid-column:span 3"><div class="dash-card-header"><span class="dash-card-title">📊 Events by Month</span></div><div class="chart-container">${monthNames.map(m=>`<div class="chart-bar" style="height:${(byMonth[m]/maxMonth)*100}%;${m===currentMonth&&currentYear===2026?'background:linear-gradient(135deg,#22C55E,#16A34A);':''}"><span class="chart-bar-value">${byMonth[m]}</span><span class="chart-bar-label">${m.slice(0,3)}</span></div>`).join('')}</div></div><div class="dash-card"><div class="dash-card-header"><span class="dash-card-title">📈 Key Metrics</span></div><div class="summary-grid"><div class="summary-item"><div class="summary-value">${events.length}</div><div class="summary-label">Total</div></div><div class="summary-item"><div class="summary-value">${keyEvents.length}</div><div class="summary-label">Key</div></div><div class="summary-item"><div class="summary-value">${byFormat.onsite}</div><div class="summary-label">Onsite</div></div><div class="summary-item"><div class="summary-value">${byFormat.virtual}</div><div class="summary-label">Virtual</div></div><div class="summary-item"><div class="summary-value">${byFormat.hybrid}</div><div class="summary-label">Hybrid</div></div><div class="summary-item"><div class="summary-value">${Object.keys(sourceNames).filter(s=>bySource[s]>0).length}</div><div class="summary-label">Sources</div></div></div></div><div class="dash-card"><div class="dash-card-header"><span class="dash-card-title">🎯 By Pillar</span></div><div class="donut-container"><div class="donut" style="background:conic-gradient(#8B5CF6 0% ${pE}%,#22C55E ${pE}% ${parseInt(pE)+parseInt(pF)}%,#3B82F6 ${parseInt(pE)+parseInt(pF)}% 100%)"><div class="donut-center"><div class="donut-center-value">${events.length}</div><div class="donut-center-label">Events</div></div></div><div class="donut-legend"><div class="legend-item"><div class="legend-dot" style="background:#8B5CF6"></div>Emotional ${pE}%</div><div class="legend-item"><div class="legend-dot" style="background:#22C55E"></div>Financial ${pF}%</div><div class="legend-item"><div class="legend-dot" style="background:#3B82F6"></div>Physical ${pP}%</div></div></div></div><div class="dash-card"><div class="dash-card-header"><span class="dash-card-title">📁 By Source</span></div><div style="display:flex;flex-direction:column;gap:8px">${topSources.map(([s,count])=>`<div style="display:flex;align-items:center;gap:10px"><span class="source-dot sq-${s}" style="width:12px;height:12px"></span><span style="flex:1;font-size:0.85rem;font-weight:600">${sourceNames[s]}</span><span style="background:var(--pp-gray-100);padding:4px 10px;border-radius:8px;font-size:0.8rem;font-weight:700">${count}</span></div>`).join('')}</div></div><div class="dash-card"><div class="dash-card-header"><span class="dash-card-title">🌍 Top Countries</span></div><div style="display:flex;flex-direction:column;gap:8px">${topCountries.map(([c,count])=>{const ci=getCountryInfo(c);return ci?`<div style="display:flex;align-items:center;gap:10px"><span style="font-size:1.2rem">${ci.flag}</span><span style="flex:1;font-size:0.85rem;font-weight:600">${ci.name}</span><span style="background:var(--pp-gray-100);padding:4px 10px;border-radius:8px;font-size:0.8rem;font-weight:700">${count}</span></div>`:''}).join('')}<div style="display:flex;align-items:center;gap:10px;margin-top:8px;padding-top:8px;border-top:1px solid var(--pp-border)"><span style="font-size:1.2rem">🌍</span><span style="flex:1;font-size:0.85rem;font-weight:600">Global Events</span><span style="background:var(--pp-blue);color:#fff;padding:4px 10px;border-radius:8px;font-size:0.8rem;font-weight:700">${byCountry['all']||0}</span></div></div></div><div class="dash-card" style="grid-column:span 2"><div class="dash-card-header"><span class="dash-card-title">⭐ Upcoming Key Events</span></div><div class="upcoming-list">${keyEvents.filter(e=>!isPastEvent(e.monthName,e.day)).slice(0,8).map(e=>`<div class="upcoming-item" onclick='openEventModal(${JSON.stringify(e).replace(/'/g,"\\'")})'><div class="upcoming-date"><div class="upcoming-date-day">${e.day}</div><div class="upcoming-date-month">${monthNames[e.month-1].slice(0,3)}</div></div><div class="upcoming-info"><div class="upcoming-title">${e.i} ${e.n}</div><div class="upcoming-meta">${e.format||''} • ${e.p}${e.countries.includes('all')?' • 🌍':''}</div></div></div>`).join('')||'<div class="no-events"><div class="no-events-text">No upcoming key events</div></div>'}</div></div>`;}
+
+function renderCalendar(){const region=document.getElementById('regionFilter').value,country=document.getElementById('countryFilter').value,source=document.getElementById('sourceFilter').value,month=document.getElementById('monthFilter').value,pillar=document.getElementById('pillarFilter').value,format=document.getElementById('formatFilter').value,search=document.getElementById('searchInput').value.toLowerCase();const months=month==='all'?Object.keys(calendarData):[month];let html='';let allFilteredEvents=[];months.forEach(m=>{const data=calendarData[m];if(!data)return;let events=data.events.filter(e=>{if(source!=='all'&&e.src!==source)return false;if(pillar!=='all'&&e.p!==pillar)return false;if(format!=='all'&&e.format!==format)return false;if(search&&!e.n.toLowerCase().includes(search)&&!(e.desc&&e.desc.toLowerCase().includes(search)))return false;if(country!=='all'&&!e.countries.includes('all')&&!e.countries.includes(country))return false;return true;});events.forEach(e=>allFilteredEvents.push({...e,monthName:m}));const grouped={};events.forEach(e=>{if(!grouped[e.src])grouped[e.src]=[];grouped[e.src].push(e);});const isCurrentMonth=m===currentMonth&&currentYear===2026;html+=`<div class="month-card ${isCurrentMonth?'current-month':''}"><div class="month-header"><span class="month-name">${m}${isCurrentMonth?'<span class="current-month-badge">📍 Current</span>':''}</span><span class="month-badge">${events.length} events</span></div><div class="month-moment">${data.moment||''}</div><div class="events-list">${events.length===0?`<div class="no-events"><div class="no-events-icon">🔭</div><div class="no-events-text">No events match filters</div></div>`:Object.keys(grouped).map(src=>`<div class="source-group"><div class="source-header"><span class="source-dot sq-${src}"></span><span class="source-name">${sourceNames[src]}</span><span class="source-count">${grouped[src].length}</span></div>${grouped[src].map(e=>{const countryTags=e.countries.includes('all')?'🌍':e.countries.slice(0,2).map(c=>{const ci=getCountryInfo(c);return ci?ci.flag:'';}).join(' ');const eventData=JSON.stringify({...e,monthName:m}).replace(/'/g,"\\'");const past=isPastEvent(m,e.day);return`<div class="event ${e.key?'key':''} ${e.format||''} ${past?'past-event':''}" onclick='openEventModal(${eventData})'><div class="event-header"><span class="event-icon">${e.i}</span><div class="event-content"><div class="event-title">${e.n}</div><div class="event-meta">${e.date?`<span class="tag tag-date">${e.date}</span>`:''}<span class="tag tag-${e.p}">${e.p}</span>${e.format?`<span class="tag tag-${e.format}">${e.format}</span>`:''}${e.key?'<span class="tag tag-key">⭐</span>':''}<span class="tag tag-country">${countryTags}</span></div></div><div class="event-actions"><button class="btn btn-secondary" onclick="event.stopPropagation();editEvent(${e.id},'${m}')">✏️</button><button class="btn btn-danger" onclick="event.stopPropagation();deleteEvent(${e.id},'${m}')">🗑️</button></div></div></div>`;}).join('')}</div>`).join('')}</div></div>`;});document.getElementById('calendarGrid').innerHTML=html;renderActiveFilters();renderQuickStats(allFilteredEvents);if(document.querySelector('.dashboard-view.active'))renderDashboard();if(document.querySelector('.timeline-view.active'))renderTimeline();}
+
+function resetFilters(){['regionFilter','countryFilter','sourceFilter','monthFilter','pillarFilter','formatFilter'].forEach(id=>document.getElementById(id).value='all');document.getElementById('searchInput').value='';renderCalendar();showToast('Filters reset','↺');}
+
+document.getElementById('regionFilter').addEventListener('change',renderCalendar);
+['countryFilter','sourceFilter','monthFilter','pillarFilter','formatFilter'].forEach(id=>document.getElementById(id).addEventListener('change',renderCalendar));
+document.getElementById('searchInput').addEventListener('input',renderCalendar);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('eventModal').classList.contains('active'))closeEventModal();if(document.getElementById('exportModal').classList.contains('active'))closeExportModal();}});
+document.querySelectorAll('.modal-overlay').forEach(overlay=>{overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active');});});
+
+updateCountryDropdown();
+updateCurrentDateBadge();
+loadFromStorage();
+renderCalendar();
+</script>
+</body>
+</html>
